@@ -27461,7 +27461,7 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _pet = require("@frontendmasters/pet");
+var _pet = _interopRequireWildcard(require("@frontendmasters/pet"));
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -27494,6 +27494,20 @@ var SearchParams = function SearchParams() {
       breeds = _useState8[0],
       setBreeds = _useState8[1];
 
+  (0, _react.useEffect)(function () {
+    setBreeds([]);
+    setBreed('');
+
+    _pet.default.breeds(animal).then(function (result) {
+      console.log({
+        result: result
+      });
+      var catNames = result.breeds.map(function (catObj) {
+        return catObj.name;
+      });
+      setBreeds(catNames);
+    });
+  }, [animal]);
   return _react.default.createElement("div", {
     className: "search-params"
   }, _react.default.createElement("form", null, _react.default.createElement("label", {
@@ -27508,7 +27522,7 @@ var SearchParams = function SearchParams() {
   })), _react.default.createElement("label", {
     htmlFor: "animal"
   }, "Animal", _react.default.createElement("select", {
-    id: "animal",
+    id: animal,
     value: animal,
     onChange: function onChange(e) {
       return setAnimal(e.target.value);
@@ -27524,7 +27538,7 @@ var SearchParams = function SearchParams() {
   }))), _react.default.createElement("label", {
     htmlFor: "breed"
   }, "breed", _react.default.createElement("select", {
-    id: "{breed}",
+    id: breed,
     value: breed,
     onChange: function onChange(e) {
       return setBreed(e.target.value);
