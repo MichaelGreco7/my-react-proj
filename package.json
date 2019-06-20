@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/MichaelGreco7/my-react-proj#readme",
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
     "prettier": "^1.18.2"
   }
 }
