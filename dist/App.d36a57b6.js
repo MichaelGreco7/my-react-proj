@@ -25785,26 +25785,39 @@ var Pet = function Pet(_ref) {
       animal = _ref.animal,
       breed = _ref.breed;
   return _react.default.createElement('div', {}, [_react.default.createElement('h1', {}, name), _react.default.createElement('h2', {}, animal), _react.default.createElement('h2', {}, breed)]);
-};
+}; // const App = () => {
+//   return React.createElement('div', {}, [
+//     React.createElement('h1', {}, 'Adopt Me!'),
+//     React.createElement(Pet, { name: 'Tom', animal: 'Dog', breed: 'Mutt' }),
+//     React.createElement(Pet, { name: 'Dash', animal: 'Dog', breed: 'Mutt' }),
+//     React.createElement(Pet, {
+//       name: 'Tootles',
+//       animal: 'Dog',
+//       breed: 'Minx'
+//     }),
+//     React.createElement(Pet, {
+//       name: 'Freddy',
+//       animal: 'Frog',
+//       breed: 'American Bullfrog'
+//     })
+//   ])
+// }
+
 
 var App = function App() {
-  return _react.default.createElement('div', {}, [_react.default.createElement('h1', {}, 'Adopt Me!'), _react.default.createElement(Pet, {
-    name: 'Tom',
-    animal: 'Dog',
-    breed: 'Mutt'
+  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Adopt Me!"), _react.default.createElement(Pet, {
+    name: "Tucker",
+    animal: "Dog",
+    breed: "Carolina Ditch Dog"
   }), _react.default.createElement(Pet, {
-    name: 'Dash',
-    animal: 'Dog',
-    breed: 'Mutt'
+    name: "Tucker",
+    animal: "Dog",
+    breed: "Carolina Ditch Dog"
   }), _react.default.createElement(Pet, {
-    name: 'Tootles',
-    animal: 'Dog',
-    breed: 'Minx'
-  }), _react.default.createElement(Pet, {
-    name: 'Freddy',
-    animal: 'Frog',
-    breed: 'American Bullfrog'
-  })]);
+    name: "Tucker",
+    animal: "Dog",
+    breed: "Carolina Ditch Dog"
+  }));
 };
 
 (0, _reactDom.render)(_react.default.createElement(App), document.getElementById('root'));
