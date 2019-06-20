@@ -24,7 +24,7 @@ const App = () => {
       }),
       React.createElement(Pet, {
         name: 'Boo-boo',
-        animal: 'Snake',
+        animal: 'SSSSnake',
         breed: 'Viper'
       }),
       React.createElement(Pet, {
