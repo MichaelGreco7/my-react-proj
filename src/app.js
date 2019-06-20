@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-
+import pet from './Pet'
 const Pet = ({ name, animal, breed }) => {
   return React.createElement('div', {}, [
     React.createElement('h1', {}, name),
@@ -10,33 +10,20 @@ const Pet = ({ name, animal, breed }) => {
 }
 
 const App = () => {
-  return React.createElement(
-    'div',
-    {},
-    React.createElement('div', {}, [
-      React.createElement('h1', {}, 'Adopt Me!'),
-      React.createElement(Pet, {
-        name: 'Trigger',
-        animal: 'Dog',
-        breed: 'Visla'
-      }),
-      React.createElement(Pet, {
-        name: 'George',
-        animal: 'Cat',
-        breed: 'Lion'
-      }),
-      React.createElement(Pet, {
-        name: 'Boo-boo',
-        animal: 'SSSSnake',
-        breed: 'Viper'
-      }),
-      React.createElement(Pet, {
-        name: 'Valentine',
-        animal: 'Horse',
-        breed: 'Mustang'
-      })
-    ])
-  )
+  return React.createElement('div', {}, [
+    React.createElement('h1', {}, 'Adopt Me!'),
+    React.createElement(Pet, { name: 'Tom', animal: 'Dog', breed: 'Mutt' }),
+    React.createElement(Pet, { name: 'Dash', animal: 'Dog', breed: 'Mutt' }),
+    React.createElement(Pet, {
+      name: 'Tootles',
+      animal: 'Dog',
+      breed: 'Minx'
+    }),
+    React.createElement(Pet, {
+      name: 'Freddy',
+      animal: 'Frog',
+      breed: 'American Bullfrog'
+    })
+  ])
 }
-
-ReactDOM.render(React.createElement(App), document.getElementById('root'))
+render(React.createElement(App), document.getElementById('root'))
