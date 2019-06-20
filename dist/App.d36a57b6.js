@@ -25760,14 +25760,49 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// const Pet = ({ name, animal, breed }) => {
+//   return React.createElement('div', {}, [
+//     React.createElement('h1', {}, name),
+//     React.createElement('h2', {}, animal),
+//     React.createElement('h2', {}, breed)
+//   ])
+// }
+//export default Pet
 var Pet = function Pet(_ref) {
   var name = _ref.name,
       animal = _ref.animal,
       breed = _ref.breed;
-  return _react.default.createElement('div', {}, [_react.default.createElement('h1', {}, name), _react.default.createElement('h2', {}, animal), _react.default.createElement('h2', {}, breed)]);
+  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Name: ", name), _react.default.createElement("h2", null, "Animal: ", animal), _react.default.createElement("h3", null, "Breed: ", breed));
 };
 
 var _default = Pet;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"SearchParams.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SearchParams = function SearchParams() {
+  var location = 'Seattle, WA';
+  return _react.default.createElement("div", {
+    className: "search-params"
+  }, _react.default.createElement("form", null, _react.default.createElement("label", {
+    htmlForm: "location"
+  }, "location", _react.default.createElement("input", {
+    id: "location",
+    value: location,
+    placeholder: "location"
+  })), _react.default.createElement("button", null, "Submit")));
+};
+
+var _default = SearchParams;
 exports.default = _default;
 },{"react":"../node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
 "use strict";
@@ -25778,14 +25813,18 @@ var _reactDom = require("react-dom");
 
 var _Pet = _interopRequireDefault(require("./Pet"));
 
+var _SearchParams = _interopRequireDefault(require("./SearchParams"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Pet = function Pet(_ref) {
-  var name = _ref.name,
-      animal = _ref.animal,
-      breed = _ref.breed;
-  return _react.default.createElement('div', {}, [_react.default.createElement('h1', {}, name), _react.default.createElement('h2', {}, animal), _react.default.createElement('h2', {}, breed)]);
-}; // const App = () => {
+// const Pet = ({ name, animal, breed }) => {
+//   return React.createElement('div', {}, [
+//     React.createElement('h1', {}, name),
+//     React.createElement('h2', {}, animal),
+//     React.createElement('h2', {}, breed)
+//   ])
+// }
+// const App = () => {
 //   return React.createElement('div', {}, [
 //     React.createElement('h1', {}, 'Adopt Me!'),
 //     React.createElement(Pet, { name: 'Tom', animal: 'Dog', breed: 'Mutt' }),
@@ -25802,26 +25841,24 @@ var Pet = function Pet(_ref) {
 //     })
 //   ])
 // }
-
-
 var App = function App() {
-  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Adopt Me!"), _react.default.createElement(Pet, {
+  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Adopt Me!"), _react.default.createElement(_Pet.default, {
     name: "Tucker",
     animal: "Dog",
     breed: "Carolina Ditch Dog"
-  }), _react.default.createElement(Pet, {
+  }), _react.default.createElement(_Pet.default, {
     name: "Tucker",
     animal: "Dog",
     breed: "Carolina Ditch Dog"
-  }), _react.default.createElement(Pet, {
+  }), _react.default.createElement(_Pet.default, {
     name: "Tucker",
     animal: "Dog",
     breed: "Carolina Ditch Dog"
-  }));
+  }), _react.default.createElement(_SearchParams.default, null));
 };
 
 (0, _reactDom.render)(_react.default.createElement(App), document.getElementById('root'));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./Pet":"Pet.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./Pet":"Pet.js","./SearchParams":"SearchParams.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
